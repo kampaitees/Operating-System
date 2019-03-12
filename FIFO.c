@@ -5,7 +5,7 @@ void main(void) {
 	int rs[30], m[10];
 	
 	printf("Enter the length of reference string:");
-	scanf("%d",&n); // n - length of referenc string
+	scanf("%d",&n); // n - length of reference string
 	
 	printf("\nEnter the reference string\n");
 	
@@ -13,7 +13,7 @@ void main(void) {
 		scanf("%d",&rs[i]); // rs - reference string
 	
 	printf("\nEnter no. of frames:");
-	scanf("%d",&f);  // f - nmuber of frames
+	scanf("%d",&f);  // f - number of frames
 	
 	for(i=0;i<f;i++)
 		m[i]=-1; // initially assigned all the values to one
