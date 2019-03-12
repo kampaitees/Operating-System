@@ -26,8 +26,8 @@ void main(void) {
 	while(count<n) {
 		flag=1;
 		p++;
-		for(j=0;j<i;j++) {// here we are seeing whether new page
-			if(seq[i]==seq[j])// exists or not in fr(frame) array
+		for(j=0;j<i;j++) {// here we are seeing whether new page exists or not in fr(frame) array
+			if(seq[i]==seq[j])
 				flag=0;
 		}
 		if(flag!=0) {
@@ -41,29 +41,29 @@ void main(void) {
 	printf("\n");
 	for(i=p+1;i<max;i++) {	
 		flag=1;
-		for(j=0;j<n;j++) { // here we are seeing whether new page
-			if(seq[i]==fr[j]) // exists or not in fr(frame) array
+		for(j=0;j<n;j++) { // here we are seeing whether new page exists or not in fr(frame) array
+			if(seq[i]==fr[j]) 
 			flag=0;
 		}
 		if(flag!=0) {
-			for(j=0;j<n;j++) {// here we are finding occurrences
-				m=fr[j];//of pages in frame array in futures to 
-				for(k=i+1;k<max;k++) {// replace with new page
-					if(seq[k]==m) {// by assigning in pos 
-						pos[j]=k;//array
+			for(j=0;j<n;j++) {// here we are finding occurrences of pages in frame array in futures to replace
+				m=fr[j];//with new page by assigning in pos array
+				for(k=i+1;k<max;k++) {
+					if(seq[k]==m) { 
+						pos[j]=k;
 						break;
 					}
 					else
-						pos[j]=1;// if pages doesn't exist 
-				}//then assign 1 to correspoding position in
-			}//pos array
+						pos[j]=1;// if pages doesn't exist then assign 1 to correspoding position in
+				}// pos array
+			}
 			for(k=0;k<n;k++) {
-				if(pos[k]==1)// if in pos arrray if 1 is there
-					flag=0;// then flag = 0
+				if(pos[k]==1)// if in pos arrray if 1 is there then flag = 0
+					flag=0;
 			}
 			if(flag!=0)
-				s=findmax(pos);// if not then finding the page 
-			if(flag==0) {//farthest from current page to replace it
+				s=findmax(pos);// if not then finding the page farthest from current page to replace it
+			if(flag==0) {
 				for(k=0;k<n;k++) {
 					if(pos[k]==1) {
 						s=k;
@@ -71,8 +71,8 @@ void main(void) {
 					}
 				}
 			}
-			fr[s]=seq[i];// replacing the farthest page with current
-			for(k=0;k<n;k++)//page in frame array
+			fr[s]=seq[i];// replacing the farthest page with current page in frame array
+			for(k=0;k<n;k++)
 				printf("%d\t",fr[k]);
 			pf++;
 			printf("\n");
@@ -86,7 +86,7 @@ void main(void) {
 	printf("\n");
 }
 
-int findmax(int a[]) {// finding the page farthest fron the current page
+int findmax(int a[]) {            // finding the page farthest fron the current page
 	int max, i;
 	int k=0;
 	max=a[0];
