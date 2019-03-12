@@ -5,18 +5,18 @@ void main(void) {
 	int rs[30], m[10];
 	
 	printf("Enter the length of reference string:");
-	scanf("%d",&n);
+	scanf("%d",&n); // n - length of referenc string
 	
 	printf("\nEnter the reference string\n");
 	
 	for(i=0;i<n;i++)
-		scanf("%d",&rs[i]);
+		scanf("%d",&rs[i]); // rs - reference string
 	
 	printf("\nEnter no. of frames:");
-	scanf("%d",&f);
+	scanf("%d",&f);  // f - nmuber of frames
 	
 	for(i=0;i<f;i++)
-		m[i]=-1;
+		m[i]=-1; // initially assigned all the values to one
 	
 	printf("\nThe Page Replacement Process is :-\n");
 	
@@ -30,11 +30,11 @@ void main(void) {
 		if(k==f) {
 			
 			m[count++]=rs[i];
-			pf++;
+			pf++; // pf - number of page fault
 		}
 		
 		for(j=0;j<f;j++)
-			printf("\t%d",m[j]);
+			printf("\t%d",m[j]); // m - storing the page fault values
 		
 		if(k==f)
 			printf("\tPF No. %d",pf);
